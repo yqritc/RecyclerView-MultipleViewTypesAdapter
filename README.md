@@ -8,7 +8,7 @@ RecyclerView adapter classes for managing multiple view types
 
 [Release Note] (https://github.com/yqritc/RecyclerView-MultipleViewTypesAdapter/releases)
 
-# Gradle (Coming soon)
+# Gradle
 ```
 repositories {
     jcenter()
