@@ -21,17 +21,18 @@ dependencies {
 
 # Usage
 
-### DataBinder
+### 1. Create DataBinder
 Define class extending DataBinder for each view type.  
 DataBinder class is used to bind view and data.  
-Please refer the [samples](https://github.com/yqritc/RecyclerView-MultipleViewTypesAdapter/tree/master/sample/src/main/java/com/yqritc/recyclerviewmultipleviewtypesadapter/sample/binder)
+Please refer the [binder samples](/sample/src/main/java/com/yqritc/recyclerviewmultipleviewtypesadapter/sample/binder) for usage.
 
-### DataBindAdapter
+### 2. Create DataBindAdapter
 Create adapter class to manage DataBinder classes.  
 Use (or extend) ListBindAdapter if the order of view types used for recyclerview is in sequence.  
 If the order of view types is complex, create class by extending EnumMapBindAdapter or DataBindAdapter.  
-Please refer the [samples](https://github.com/yqritc/RecyclerView-MultipleViewTypesAdapter/tree/master/sample/src/main/java/com/yqritc/recyclerviewmultipleviewtypesadapter/sample/adapter)
+Please refer the [adapter samples](/sample/src/main/java/com/yqritc/recyclerviewmultipleviewtypesadapter/sample/adapter) for usage.
 
+### 3. Set adapter for recyclerview
 
 # License
 ```
