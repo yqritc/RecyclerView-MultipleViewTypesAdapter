@@ -1,7 +1,6 @@
 package com.yqritc.recyclerviewmultipleviewtypesadapter.sample.adapter;
 
 
-import com.yqritc.recyclerviewmultipleviewtypesadapter.DataBinder;
 import com.yqritc.recyclerviewmultipleviewtypesadapter.EnumMapBindAdapter;
 import com.yqritc.recyclerviewmultipleviewtypesadapter.sample.SampleData;
 import com.yqritc.recyclerviewmultipleviewtypesadapter.sample.binder.Sample1Binder;
@@ -30,7 +29,7 @@ public class EnumMapAdapter extends EnumMapBindAdapter<EnumMapAdapter.SampleView
     }
 
     @Override
-    public SampleViewType getEnumItemViewType(int position) {
+    public SampleViewType getEnumFromPosition(int position) {
         if (position == 1) {
             return SampleViewType.SAMPLE1;
         } else if (position == 3) {
@@ -41,44 +40,7 @@ public class EnumMapAdapter extends EnumMapBindAdapter<EnumMapAdapter.SampleView
     }
 
     @Override
-    public int getPosition(DataBinder binder, int binderPosition) {
-        switch (getEnum(binder)) {
-            case SAMPLE1:
-                return 1;
-            case SAMPLE2:
-                if (binderPosition == 0) {
-                    return 0;
-                } else if (binderPosition == 1) {
-                    return 2;
-                } else {
-                    return 2 + binderPosition;
-                }
-            case SAMPLE3:
-                return 3;
-        }
-        throw new IllegalArgumentException("Invalid Arguments");
-    }
-
-    @Override
-    public int getBinderPosition(int position) {
-        switch (getEnumItemViewType(position)) {
-            case SAMPLE1:
-            case SAMPLE3:
-                return 0;
-            case SAMPLE2:
-                if (position == 0) {
-                    return 0;
-                } else if (position == 2) {
-                    return 1;
-                } else {
-                    return position - 2;
-                }
-        }
-        throw new IllegalArgumentException("Invalid Argument");
-    }
-
-    @Override
-    public SampleViewType getEnum(int ordinal) {
+    public SampleViewType getEnumFromOrdinal(int ordinal) {
         return SampleViewType.values()[ordinal];
     }
 }

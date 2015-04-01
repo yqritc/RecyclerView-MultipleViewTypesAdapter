@@ -23,35 +23,80 @@ public abstract class EnumMapBindAdapter<E extends Enum<E>> extends DataBindAdap
 
     @Override
     public int getItemViewType(int position) {
-        return getEnumItemViewType(position).ordinal();
+        return getEnumFromPosition(position).ordinal();
     }
 
     @Override
     public <T extends DataBinder> T getDataBinder(int viewType) {
-        return getDataBinder(getEnum(viewType));
+        return getDataBinder(getEnumFromOrdinal(viewType));
     }
 
     @Override
-    public abstract int getPosition(DataBinder binder, int binderPosition);
-
-    @Override
-    public abstract int getBinderPosition(int position);
-
-    public abstract E getEnumItemViewType(int position);
-
-    public abstract E getEnum(int ordinal);
-
-    public <T extends DataBinder> T getDataBinder(E e) {
-        return (T) mBinderMap.get(e);
+    public void notifyBinderItemRangeChanged(DataBinder binder, int positionStart, int itemCount) {
+        for (int i = positionStart; i <= itemCount; i++) {
+            notifyItemChanged(getPosition(binder, i));
+        }
     }
 
-    public E getEnum(DataBinder binder) {
+    @Override
+    public void notifyBinderItemRangeInserted(DataBinder binder, int positionStart, int itemCount) {
+        for (int i = positionStart; i <= itemCount; i++) {
+            notifyItemInserted(getPosition(binder, i));
+        }
+    }
+
+    @Override
+    public void notifyBinderItemRangeRemoved(DataBinder binder, int positionStart, int itemCount) {
+        for (int i = positionStart; i <= itemCount; i++) {
+            notifyItemRemoved(getPosition(binder, i));
+        }
+    }
+
+    @Override
+    public int getPosition(DataBinder binder, int binderPosition) {
+        E targetViewType = getEnumFromBinder(binder);
+        for (int i = 0; i < getItemCount(); i++) {
+            if (targetViewType == getEnumFromPosition(i)) {
+                binderPosition--;
+                if (binderPosition <= 0) {
+                    return i;
+                }
+            }
+        }
+        return getItemCount();
+    }
+
+    @Override
+    public int getBinderPosition(int position) {
+        E targetViewType = getEnumFromPosition(position);
+        int binderPosition = -1;
+        for (int i = 0; i <= position; i++) {
+            if (targetViewType == getEnumFromPosition(i)) {
+                binderPosition++;
+            }
+        }
+
+        if (binderPosition == -1) {
+            throw new IllegalArgumentException("Invalid Argument");
+        }
+        return binderPosition;
+    }
+
+    public abstract E getEnumFromPosition(int position);
+
+    public abstract E getEnumFromOrdinal(int ordinal);
+
+    public E getEnumFromBinder(DataBinder binder) {
         for (Map.Entry<E, DataBinder> entry : mBinderMap.entrySet()) {
             if (entry.getValue().equals(binder)) {
                 return entry.getKey();
             }
         }
         throw new IllegalArgumentException("Invalid Data Binder");
+    }
+
+    public <T extends DataBinder> T getDataBinder(E e) {
+        return (T) mBinderMap.get(e);
     }
 
     public Map<E, DataBinder> getBinderMap() {

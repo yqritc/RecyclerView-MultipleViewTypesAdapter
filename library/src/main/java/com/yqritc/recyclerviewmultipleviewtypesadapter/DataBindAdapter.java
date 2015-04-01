@@ -37,9 +37,8 @@ abstract public class DataBindAdapter extends RecyclerView.Adapter<RecyclerView.
         notifyItemChanged(getPosition(binder, binderPosition));
     }
 
-    public void notifyBinderItemRangeChanged(DataBinder binder, int positionStart, int itemCount) {
-        notifyItemRangeChanged(getPosition(binder, positionStart), itemCount);
-    }
+    public abstract void notifyBinderItemRangeChanged(DataBinder binder, int positionStart,
+            int itemCount);
 
     public void notifyBinderItemInserted(DataBinder binder, int binderPosition) {
         notifyItemInserted(getPosition(binder, binderPosition));
@@ -49,15 +48,13 @@ abstract public class DataBindAdapter extends RecyclerView.Adapter<RecyclerView.
         notifyItemMoved(getPosition(binder, fromPosition), getPosition(binder, toPosition));
     }
 
-    public void notifyBinderItemRangeInserted(DataBinder binder, int positionStart, int itemCount) {
-        notifyItemRangeInserted(getPosition(binder, positionStart), itemCount);
-    }
+    public abstract void notifyBinderItemRangeInserted(DataBinder binder, int positionStart,
+            int itemCount);
 
     public void notifyBinderItemRemoved(DataBinder binder, int binderPosition) {
         notifyItemRemoved(getPosition(binder, binderPosition));
     }
 
-    public void notifyBinderItemRangeRemoved(DataBinder binder, int positionStart, int itemCount) {
-        notifyItemRangeRemoved(getPosition(binder, positionStart), itemCount);
-    }
+    public abstract void notifyBinderItemRangeRemoved(DataBinder binder, int positionStart,
+            int itemCount);
 }

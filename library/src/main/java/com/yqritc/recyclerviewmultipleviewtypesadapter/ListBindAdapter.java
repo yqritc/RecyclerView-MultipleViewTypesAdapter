@@ -66,6 +66,21 @@ public class ListBindAdapter extends DataBindAdapter {
         return position;
     }
 
+    @Override
+    public void notifyBinderItemRangeChanged(DataBinder binder, int positionStart, int itemCount) {
+        notifyItemRangeChanged(getPosition(binder, positionStart), itemCount);
+    }
+
+    @Override
+    public void notifyBinderItemRangeInserted(DataBinder binder, int positionStart, int itemCount) {
+        notifyItemRangeInserted(getPosition(binder, positionStart), itemCount);
+    }
+
+    @Override
+    public void notifyBinderItemRangeRemoved(DataBinder binder, int positionStart, int itemCount) {
+        notifyItemRangeRemoved(getPosition(binder, positionStart), itemCount);
+    }
+
     public List<DataBinder> getBinderList() {
         return mBinderList;
     }
