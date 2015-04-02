@@ -86,31 +86,31 @@ public class ListBindAdapter extends DataBindAdapter {
         return mBinderList;
     }
 
-    public void add(DataBinder binder) {
+    public void addBinder(DataBinder binder) {
         mBinderList.add(binder);
     }
 
-    public void addAll(List<DataBinder> dataSet) {
+    public void addAllBinder(List<DataBinder> dataSet) {
         mBinderList.addAll(dataSet);
     }
 
-    public void addAll(DataBinder... dataSet) {
+    public void addAllBinder(DataBinder... dataSet) {
         mBinderList.addAll(Arrays.asList(dataSet));
     }
 
-    public void set(int index, DataBinder binder) {
+    public void setBinder(int index, DataBinder binder) {
         mBinderList.set(index, binder);
     }
 
-    public void remove(int index) {
+    public void removeBinder(int index) {
         mBinderList.remove(index);
     }
 
-    public void remove(DataBinder binder) {
+    public void removeBinder(DataBinder binder) {
         mBinderList.remove(binder);
     }
 
-    public void clear() {
+    public void clearBinderList() {
         mBinderList.clear();
     }
 }

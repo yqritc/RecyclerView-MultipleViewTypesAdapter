@@ -19,9 +19,9 @@ public class EnumMapAdapter extends EnumMapBindAdapter<EnumMapAdapter.SampleView
     }
 
     public EnumMapAdapter() {
-        put(SampleViewType.SAMPLE1, new Sample1Binder(this));
-        put(SampleViewType.SAMPLE2, new Sample2Binder(this));
-        put(SampleViewType.SAMPLE3, new Sample3Binder(this));
+        putBinder(SampleViewType.SAMPLE1, new Sample1Binder(this));
+        putBinder(SampleViewType.SAMPLE2, new Sample2Binder(this));
+        putBinder(SampleViewType.SAMPLE3, new Sample3Binder(this));
     }
 
     public void setSample2Data(List<SampleData> dataSet) {

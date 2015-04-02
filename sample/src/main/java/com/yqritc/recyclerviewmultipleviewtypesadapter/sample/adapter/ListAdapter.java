@@ -15,7 +15,7 @@ import java.util.List;
 public class ListAdapter extends ListBindAdapter {
 
     public ListAdapter() {
-        addAll(new Sample1Binder(this),
+        addAllBinder(new Sample1Binder(this),
                 new Sample2Binder(this),
                 new Sample3Binder(this));
     }

@@ -103,15 +103,15 @@ public abstract class EnumMapBindAdapter<E extends Enum<E>> extends DataBindAdap
         return mBinderMap;
     }
 
-    public void put(E e, DataBinder binder) {
+    public void putBinder(E e, DataBinder binder) {
         mBinderMap.put(e, binder);
     }
 
-    public void remove(E e) {
+    public void removeBinder(E e) {
         mBinderMap.remove(e);
     }
 
-    public void clear() {
+    public void clearBinderMap() {
         mBinderMap.clear();
     }
 }
