@@ -32,27 +32,6 @@ public abstract class EnumMapBindAdapter<E extends Enum<E>> extends DataBindAdap
     }
 
     @Override
-    public void notifyBinderItemRangeChanged(DataBinder binder, int positionStart, int itemCount) {
-        for (int i = positionStart; i <= itemCount; i++) {
-            notifyItemChanged(getPosition(binder, i));
-        }
-    }
-
-    @Override
-    public void notifyBinderItemRangeInserted(DataBinder binder, int positionStart, int itemCount) {
-        for (int i = positionStart; i <= itemCount; i++) {
-            notifyItemInserted(getPosition(binder, i));
-        }
-    }
-
-    @Override
-    public void notifyBinderItemRangeRemoved(DataBinder binder, int positionStart, int itemCount) {
-        for (int i = positionStart; i <= itemCount; i++) {
-            notifyItemRemoved(getPosition(binder, i));
-        }
-    }
-
-    @Override
     public int getPosition(DataBinder binder, int binderPosition) {
         E targetViewType = getEnumFromBinder(binder);
         for (int i = 0; i < getItemCount(); i++) {
@@ -80,6 +59,27 @@ public abstract class EnumMapBindAdapter<E extends Enum<E>> extends DataBindAdap
             throw new IllegalArgumentException("Invalid Argument");
         }
         return binderPosition;
+    }
+
+    @Override
+    public void notifyBinderItemRangeChanged(DataBinder binder, int positionStart, int itemCount) {
+        for (int i = positionStart; i <= itemCount; i++) {
+            notifyItemChanged(getPosition(binder, i));
+        }
+    }
+
+    @Override
+    public void notifyBinderItemRangeInserted(DataBinder binder, int positionStart, int itemCount) {
+        for (int i = positionStart; i <= itemCount; i++) {
+            notifyItemInserted(getPosition(binder, i));
+        }
+    }
+
+    @Override
+    public void notifyBinderItemRangeRemoved(DataBinder binder, int positionStart, int itemCount) {
+        for (int i = positionStart; i <= itemCount; i++) {
+            notifyItemRemoved(getPosition(binder, i));
+        }
     }
 
     public abstract E getEnumFromPosition(int position);

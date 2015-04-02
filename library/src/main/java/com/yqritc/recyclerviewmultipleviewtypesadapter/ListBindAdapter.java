@@ -47,9 +47,10 @@ public class ListBindAdapter extends DataBindAdapter {
         }
 
         int position = binderPosition;
-        for (DataBinder dataBinder : mBinderList) {
-            position += dataBinder.getItemCount();
+        for (int i = 0; i < viewType; i++) {
+            position += mBinderList.get(i).getItemCount();
         }
+
         return position;
     }
 
