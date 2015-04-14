@@ -1,6 +1,8 @@
 # RecyclerView-MultipleViewTypeAdapter
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MultipleViewTypesAdapter-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1703)
+[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Download](https://api.bintray.com/packages/yqritc/maven/recyclerview-multiple-viewtypes-adapter/images/download.svg)](https://bintray.com/yqritc/maven/recyclerview-multiple-viewtypes-adapter/_latestVersion)
 
 RecyclerView adapter classes for managing multiple view types
 
