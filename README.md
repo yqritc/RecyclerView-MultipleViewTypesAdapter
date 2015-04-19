@@ -28,7 +28,7 @@ dependencies {
 The standard way to handle view creation and data binding logics for RecyclerView is to define the single adapter class extending RecyclerView.Adapter.  
 If you need to handle simple view type, you will not get in trouble.  
 But if you need to handle the multiple complex view types, writing logic in single adapter class causes unmaintainable source code.  
-So, this library separates the logic for each view type into single class (DataBidner), and change the role of adapter class (DataBindAdapter) to manage these DataBinder classes.  
+So, this library separates the logic for each view type into single class (DataBinder), and change the role of adapter class (DataBindAdapter) to manage these DataBinder classes.  
 By using this library, the implementation would be simple and clear, and also source code for each view type would be maintenable and reusable.  
 
 
