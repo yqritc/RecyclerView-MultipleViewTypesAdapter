@@ -1,6 +1,6 @@
 package com.yqritc.recyclerviewmultipleviewtypesadapter.sample;
 
-import com.yqritc.recyclerviewmultipleviewtypesadapter.sample.adapter.EnumMapAdapter;
+import com.yqritc.recyclerviewmultipleviewtypesadapter.sample.adapter.SampleEnumMapAdapter;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -19,7 +19,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview_main);
-        EnumMapAdapter adapter = new EnumMapAdapter();
+        SampleEnumMapAdapter adapter = new SampleEnumMapAdapter();
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

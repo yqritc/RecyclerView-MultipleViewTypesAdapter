@@ -12,13 +12,13 @@ import java.util.List;
 /**
  * Created by yqritc on 2015/03/20.
  */
-public class EnumMapAdapter extends EnumMapBindAdapter<EnumMapAdapter.SampleViewType> {
+public class SampleEnumMapAdapter extends EnumMapBindAdapter<SampleEnumMapAdapter.SampleViewType> {
 
     enum SampleViewType {
         SAMPLE1, SAMPLE2, SAMPLE3
     }
 
-    public EnumMapAdapter() {
+    public SampleEnumMapAdapter() {
         putBinder(SampleViewType.SAMPLE1, new Sample1Binder(this));
         putBinder(SampleViewType.SAMPLE2, new Sample2Binder(this));
         putBinder(SampleViewType.SAMPLE3, new Sample3Binder(this));

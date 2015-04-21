@@ -42,7 +42,7 @@ Please refer the [binder samples](/sample/src/main/java/com/yqritc/recyclerviewm
 
 ### 2. Create DataBindAdapter
 Create adapter class to manage DataBinder classes.  
-Use (or extend) ListBindAdapter if the order of view types used for recyclerview is in sequence.  
+Use (or extend) ListBindAdapter (or EnumListBindAdapter) if the order of view types used for recyclerview is in sequence.
 If the order of view types is complex, create class by extending EnumMapBindAdapter or DataBindAdapter.  
 
 Please refer the [adapter samples](/sample/src/main/java/com/yqritc/recyclerviewmultipleviewtypesadapter/sample/adapter) for usage.
