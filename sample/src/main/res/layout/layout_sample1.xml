@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/activity_vertical_margin"
     android:layout_marginBottom="@dimen/activity_vertical_margin"
-    android:background="@android:color/holo_green_light">
+    android:background="@color/green_light">
 
     <TextView
         android:id="@+id/title_type1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Type 1"
-        android:background="@android:color/holo_green_dark"
+        android:text="@string/title_type1"
+        android:background="@color/green_dark"
         android:textColor="@android:color/white"
         android:textSize="40sp"/>
 
@@ -29,7 +29,7 @@
         android:id="@+id/content_type1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is sample data for view type 1"
+        android:text="@string/content_type1"
         android:textSize="16sp"
         android:layout_margin="12dp"/>
 </LinearLayout>

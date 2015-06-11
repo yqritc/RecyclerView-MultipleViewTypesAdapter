@@ -15,8 +15,8 @@ android {
 
 dependencies {
     compile project(':library')
-//    compile 'com.yqritc:recyclerview-multiple-viewtypes-adapter:1.0.4'
-    compile 'com.android.support:appcompat-v7:22.0.0'
-    compile 'com.android.support:recyclerview-v7:22.0.0'
+//    compile 'com.yqritc:recyclerview-multiple-viewtypes-adapter:1.0.5'
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:recyclerview-v7:22.2.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
 }
