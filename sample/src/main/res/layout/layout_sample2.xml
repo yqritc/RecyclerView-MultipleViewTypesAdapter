@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/activity_vertical_margin"
     android:layout_marginBottom="@dimen/activity_vertical_margin"
-    android:background="@android:color/holo_red_light">
+    android:background="@color/red_light">
 
     <TextView
         android:id="@+id/title_type2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_dark"
+        android:background="@color/red_dark"
         android:textColor="@android:color/white"
         android:textSize="40sp"/>
 

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Multiple ViewTypes Adapter</string>
+    <string name="title_type1">View Type 1</string>
+    <string name="title_type2">View Type 2</string>
+    <string name="title_type3">View Type 3</string>
+    <string name="content_type1">This is sample data for view type 1</string>
+    <string name="content_type2">This is sample data for view type 2 - %d</string>
+    <string name="content_type3">This is sample data for view type 3</string>
+    <string name="drawable_animal_name">animal%d</string>
 </resources>
