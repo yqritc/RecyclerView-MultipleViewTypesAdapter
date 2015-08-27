@@ -97,20 +97,4 @@ public class ListBindAdapter extends DataBindAdapter {
     public void addAllBinder(DataBinder... dataSet) {
         mBinderList.addAll(Arrays.asList(dataSet));
     }
-
-    public void setBinder(int index, DataBinder binder) {
-        mBinderList.set(index, binder);
-    }
-
-    public void removeBinder(int index) {
-        mBinderList.remove(index);
-    }
-
-    public void removeBinder(DataBinder binder) {
-        mBinderList.remove(binder);
-    }
-
-    public void clearBinderList() {
-        mBinderList.clear();
-    }
 }
