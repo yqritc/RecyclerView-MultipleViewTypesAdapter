@@ -16,7 +16,8 @@ public class ListBindAdapter extends DataBindAdapter {
     @Override
     public int getItemCount() {
         int itemCount = 0;
-        for (DataBinder binder : mBinderList) {
+        for (int i = 0, size = mBinderList.size(); i < size; i++) {
+            DataBinder binder = mBinderList.get(i);
             itemCount += binder.getItemCount();
         }
         return itemCount;
@@ -25,7 +26,7 @@ public class ListBindAdapter extends DataBindAdapter {
     @Override
     public int getItemViewType(int position) {
         int itemCount = 0;
-        for (int viewType = 0; viewType < mBinderList.size(); viewType++) {
+        for (int viewType = 0, size = mBinderList.size(); viewType < size; viewType++) {
             itemCount += mBinderList.get(viewType).getItemCount();
             if (position < itemCount) {
                 return viewType;
@@ -57,7 +58,7 @@ public class ListBindAdapter extends DataBindAdapter {
     @Override
     public int getBinderPosition(int position) {
         int binderItemCount;
-        for (int i = 0; i < mBinderList.size(); i++) {
+        for (int i = 0, size = mBinderList.size(); i < size; i++) {
             binderItemCount = mBinderList.get(i).getItemCount();
             if (position - binderItemCount < 0) {
                 break;

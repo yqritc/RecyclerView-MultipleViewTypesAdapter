@@ -34,7 +34,7 @@ public abstract class EnumMapBindAdapter<E extends Enum<E>> extends DataBindAdap
     @Override
     public int getPosition(DataBinder binder, int binderPosition) {
         E targetViewType = getEnumFromBinder(binder);
-        for (int i = 0; i < getItemCount(); i++) {
+        for (int i = 0, count = getItemCount(); i < count; i++) {
             if (targetViewType == getEnumFromPosition(i)) {
                 binderPosition--;
                 if (binderPosition < 0) {
