@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.yqritc:recyclerview-multiple-viewtypes-adapter:1.1.0'
+    implementation 'com.yqritc:recyclerview-multiple-viewtypes-adapter:1.1.0'
 }
 ```
 
